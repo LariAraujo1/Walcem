@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locais de Coleta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Locais de Coleta</h1>
+    </header>
+
+    <main>
+        <h2>Encontre o ponto mais próximo de você</h2>
+        <h3>Digite seu CEP, escolha o eletrônico e encontre os pontos de recebimento para o descarte correto.</h3>
+        
+        <form>
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" placeholder="_____-___">
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <label for="distancia">Distância</label>
+                <select id="distancia" name="distancia">
+                    <option value="5">5 km</option>
+                    <option value="10">10 km</option>
+                    <option value="15">15 km</option>
+                    <option value="20">20 km</option>
+                    <option value="30">30 km</option>
+                    <option value="40">40 km</option>
+                    <option value="50">50 km</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="porte">Porte</label>
+                <select id="porte" name="porte">
+                    <option value="pequeno">Pequeno</option>
+                    <option value="medio">Médio</option>
+                    <option value="grande">Grande</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="produto">Produto</label>
+                <select id="produto" name="produto">
+                    <option value="selecao">Selecione o Produto</option>
+                    <option value="ferramentas">Ferramentas</option>
+                    <option value="entretenimento">Eq. Entretenimento</option>
+                    <option value="redes">Comp. de Redes</option>
+                    <option value="bateria">Bateria</option>
+                    <option value="audio">Eq. Audio</option>
+                    <option value="computadores">Computadores</option>
+                    <option value="televisores">Televisores</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+            <br>
+            <br>
+            <div class="form-group button">
+                <button type="submit">ENCONTRAR PONTOS</button>
+            </div>
+        </form>
+
+        <div class="map">
+           <img src="mapa.jpg" alt="mapa">
+        </div>
+    </main>
+</body>
+</html>
