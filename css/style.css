@@ -3,7 +3,7 @@
 /* Global Styles */
 
 * {
-  margin: 0;
+  margin: 0px;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
@@ -360,7 +360,7 @@ main {
 /* FAQ */
 
 #faq {
-  margin: 400px 0; /* Margin top e bottom de 400px */
+  margin: 300px 0; /* Margin top e bottom de 400px */
   text-align: center;
 }
 
@@ -439,39 +439,28 @@ main {
 /* Footer */
 
 footer {
-  margin-top: 300px;
+  padding-inline: 50px;
   position: relative;
-  background-color: #4b7d60; /* Cor de fundo do footer */
-  padding: 20px;
-  color: white;
-}
-
-.footer-content {
-  height: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-bottom: 60px; /* Espaço para a parte que flutua */
-  position: relative;
-  top: -50px; /* Ajusta conforme necessário para mover para cima */
 }
 
 .persons img {
-  max-width: 100%;
+  width: 100px;
   height: auto;
-  position: relative;
-  top: -400px; /* Ajusta conforme necessário para mover para cima */
+}
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
 }
 
 .contact-form {
   background-color: white;
+  color: #4d6183;
   border: 1px solid black;
   padding: 20px;
   border-radius: 10px;
   width: 300px;
-  position: relative;
-  top: -400px; /* Faz com que o formulário flutue acima do footer */
-  z-index: 1;
 }
 
 .contact-form input,
@@ -497,31 +486,21 @@ footer {
   background-color: #57b024;
 }
 
+.footer-content .footer-info {
+  background-color: #00e426;
+}
+
 .footer-info {
-  background-color: #4b7d60; /* Cor de fundo das informações do footer */
-  padding: 20px;
-  text-align: left; /* Alinha o texto à esquerda */
-  flex: 1;
+  padding: 30px;
+  background-color: #4b7b60;
+  z-index: 2;
+  width: calc(100% + 100px); /* Largura completa da página + padding */
+  margin-left: -50px; /* Ajusta a posição para encostar nas bordas */
+  margin-top: 20px; /* Espaço entre footer-content e footer-info */
 }
 
-.footer-info nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.footer-info nav ul li {
-  margin: 10px 0;
-}
-
-.footer-info nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-info nav ul li a:hover {
-  text-decoration: underline;
-}
-
-.footer-info .contact-info {
-  margin-top: 20px;
+.footer-info nav,
+.footer-info .contact-info,
+.footer-info p {
+  padding: 0 50px; /* Compensa o padding retirado do footer */
 }
