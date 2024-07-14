@@ -1,24 +1,19 @@
 :root {
-    /* Cores */
     --primary-color: #007bff;
     --secondary-color: #4D6183;
     --text-color: #000;
     --background-color: #fff;
     --footer-background: #164B30;
     --hover-color: #006400;
-
-    /* Espaçamentos e dimensões */
+    --dark-gray: #333333;
     --main-padding: 20px;
     --header-padding: 20px 0;
     --footer-padding: 50px 0;
     --main-margin: 20px auto;
     --footer-margin-top: 20px;
-
-    /* Transições */
     --transition-duration: 0.3s;
 }
 
-/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +35,13 @@ header {
     left: 0;
     transition: top var(--transition-duration);
     z-index: 1000;
+    max-width: 1920px;
+    margin: 0 auto; 
+}
+
+header.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
 }
 
 nav {
@@ -70,19 +72,17 @@ nav .logo a:hover img {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end; /* Alinhar os itens à direita */
+    justify-content: flex-end;
     margin-top: 10px;
 }
 
 nav ul li {
     margin-left: 15px;
-    display: flex;
-    align-items: center;
+    display: inline-block;
 }
 
 nav ul li a {
     display: inline-flex;
-    align-items: center;
     text-decoration: none;
     color: var(--text-color);
     font-size: 16px;
@@ -91,20 +91,64 @@ nav ul li a {
     border-radius: 5px;
     transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease, box-shadow 0.3s ease;
 }
+
+nav ul li a:hover {
+    background: linear-gradient(45deg, #4B7D60, #6FAE89);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
 nav .fa-user-circle {
     font-size: 25px;
 }
 
-nav ul li a:hover {
-    background: linear-gradient(45deg, #4B7D60, #6FAE89); /* Gradiente suave de #4B7D60 para um tom mais claro */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f1f1f1; /* Fundo claro */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar:hover {
+    background-color: #e0e0e0; /* Fundo mais escuro ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 200px;
+    border-radius: 5px 0 0 5px;
+    cursor: text;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: #164B30; /* Botão verde */
+    border: none;
+    cursor: pointer;
     color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
-    transform: translateY(-2px); /* Efeito de elevação sutil */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: var(--primary-color); /* Muda a cor ao passar o mouse */
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho */
+}
+
+.search-bar button i {
+    font-size: 16px;
 }
 
 main {
-    width: 80%;
-    margin: var(--main-margin);
+    width: 90%;
+    max-width: 1600px;
+    margin: var(--main-margin) auto;
     background-color: var(--background-color);
     padding: var(--main-padding);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -112,39 +156,86 @@ main {
     border-radius: 10px;
 }
 
-.privacy-policy .icons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px var(--main-padding);
+.featured-posts, .categories {
+    margin-bottom: 40px;
 }
 
-.privacy-policy h1 {
+.featured-posts h2, .categories h2 {
     text-align: center;
     color: var(--secondary-color);
     margin-bottom: 20px;
 }
 
-.privacy-policy h2 {
-    color: var(--text-color);
-    margin-top: 20px;
-    margin-bottom: 10px;
+.posts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.privacy-policy p, .privacy-policy ul {
+.post {
+    width: 48%;
     margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Adiciona a propriedade perspective ao contêiner para dar a sensação de profundidade */
+    perspective: 1000px;
 }
 
-.privacy-policy ul {
-    padding-left: 20px;
+.post img {
+    width: 100%;
+    height: 200px;
+    max-height: 400px;
+    object-fit:fill; 
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 15px;
 }
 
-.privacy-policy ul li {
-    margin-bottom: 10px;
+.post h3 {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 16px;
 }
 
-.privacy-policy strong {
-    color: #333333;
+.post p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--dark-gray);
+}
+
+.post a {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background-color: #006400;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.post a:hover {
+    background-color: #004d00;
+    color: #90ee90;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.post:hover {
+    /* Faz o card "vir para frente" ao passar o mouse */
+    transform: scale(1.05) translateZ(10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Adicionando classes para visualização e ocultação de posts */
+.post.hidden {
+    display: none;
+}
+
+.post.visible {
+    display: block; /* ou flex, dependendo do layout desejado */
 }
 
 footer {
@@ -158,11 +249,13 @@ footer {
 
 footer .footer-content {
     width: 100%;
+    max-width: 1600px;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 footer .footer-links, footer .contact-info, .social-media {
@@ -207,14 +300,6 @@ footer .contact-info p {
     color: #ddd;
     font-size: 14px;
     margin-bottom: 5px;
-}
-
-footer .newsletter form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
 }
 
 footer .newsletter input[type="email"] {
@@ -275,7 +360,6 @@ footer .newsletter button:hover {
     transform: translateY(-5px);
 }
 
-
 .fa.fa-twitter i {
     display: none; /* Oculta o ícone Font Awesome do Twitter */
 }
@@ -293,7 +377,6 @@ footer .newsletter button:hover {
     color: #006400; /* Mudança de cor ao passar o mouse */
     transform: translateY(-5px);
 }
-
 
 .copyright {
     background-color: var(--background-color);
@@ -322,102 +405,105 @@ footer .newsletter button:hover {
     color: #0056b3;
 }
 
-.hidden {
-    top: -100px;
-}
-
-/* Media Queries para Responsividade */
-@media (max-width: 1920px) {
-    /* Ajustes para telas maiores que 1920px de largura */
-
-    /* Aumentar a largura do conteúdo principal */
+@media (min-width: 1920px) {
     main {
-        width: 80%; /* Ajuste para 80% da largura total */
-        max-width: 1600px; /* Largura máxima para evitar que o conteúdo se estenda muito */
-        margin-top: 10%; /* Margem superior ajustada para alinhar melhor com o cabeçalho */
+        width: 80%; /* Largura do conteúdo principal */
+        max-width: 1600px; /* Largura máxima do conteúdo principal */
     }
 
-    /* Espaçamento maior entre os itens do menu */
-    nav ul li {
-        margin-left: 20px;
+    header, footer {
+        max-width: 1920px; /* Largura máxima do cabeçalho e rodapé */
     }
 
-    /* Espaçamento maior entre os links do rodapé */
-    footer .footer-links a {
-        margin: 0 15px;
+    .posts {
+        justify-content: space-between; /* Alinhamento dos posts */
+    }
+
+    .post {
+        width: 48%; /* Largura dos posts */
+    }
+
+    .footer-content {
+        justify-content: space-between; /* Alinhamento dos elementos do rodapé */
+    }
+
+    .footer-links, .contact-info, .social-media {
+        width: auto; /* Largura automática dos elementos do rodapé */
+        text-align: left; /* Alinhamento do texto no rodapé */
+    }
+
+    .footer-content .footer-links {
+        margin-bottom: 0; /* Margem inferior dos links do rodapé */
     }
 }
 
-
-@media (max-width: 1440px) {
-    /* Estilos para telas menores que 1440px de largura */
-    nav ul li {
-        margin-left: 10px; /* Reduzir espaçamento entre os itens do menu */
+@media (min-width: 769px) and (max-width: 1919px) {
+    main {
+        width: 90%; /* Largura do conteúdo principal */
+        max-width: 1400px; /* Largura máxima do conteúdo principal */
     }
 
-    footer .footer-links a {
-        margin: 0 8px; /* Reduzir espaçamento entre os links do rodapé */
-    }
-}
-
-@media (max-width: 1024px) {
-    /* Estilos para telas menores que 1024px de largura */
-    nav ul {
-        justify-content: center; /* Centralizar itens do menu */
+    header, footer {
+        max-width: 100%; /* Largura máxima do cabeçalho e rodapé */
     }
 
-    nav ul li {
-        margin: 0 10px; /* Espaçamento menor entre os itens do menu */
+    .posts {
+        justify-content: space-around; /* Alinhamento dos posts */
     }
 
-    footer .footer-links a {
-        margin: 0 5px; /* Espaçamento menor entre os links do rodapé */
+    .post {
+        width: 45%; /* Largura dos posts */
     }
 
-    .social-media a {
-        margin: 0 8px; /* Espaçamento menor entre os ícones de redes sociais */
+    .footer-content {
+        justify-content: center; /* Alinhamento dos elementos do rodapé */
+    }
+
+    .footer-links, .contact-info, .social-media {
+        width: auto; /* Largura automática dos elementos do rodapé */
+        text-align: center; /* Alinhamento do texto no rodapé */
+    }
+
+    .footer-content .footer-links {
+        margin-bottom: 20px; /* Margem inferior dos links do rodapé */
     }
 }
 
 @media (max-width: 768px) {
-    /* Estilos para telas menores que 768px de largura */
-    nav ul {
-        flex-direction: column; /* Coluna para os itens do menu */
-        align-items: center; /* Alinhar ao centro */
+    nav {
+        width: 100%; /* Largura do menu */
+        padding: 0 10px; /* Espaçamento interno do menu */
     }
 
-    nav ul li {
-        margin: 10px 0;
+    .nav-links {
+        display: none; /* Esconde os links do menu */
     }
 
-    footer .footer-content {
-        padding: 10px;
+    main {
+        width: 100%; /* Largura do conteúdo principal */
+        max-width: 100%; /* Largura máxima do conteúdo principal */
+        margin-top: 10px; /* Margem superior do conteúdo principal */
     }
 
-    .social-media {
-        padding: 10px;
+    .posts {
+        flex-direction: column; /* Direção dos posts */
     }
 
-    footer .footer-links a {
-        margin: 5px 0;
+    .post {
+        width: 100%; /* Largura dos posts */
     }
 
-    .social-media a {
-        margin: 5px 0;
+    .footer-content {
+        flex-direction: column; /* Direção dos elementos do rodapé */
+    }
+
+    .footer-links, .contact-info, .social-media {
+        width: 100%; /* Largura dos elementos do rodapé */
+        text-align: center; /* Alinhamento do texto no rodapé */
+    }
+
+    .footer-content .footer-links {
+        margin-bottom: 20px; /* Margem inferior dos links do rodapé */
     }
 }
 
-@media (max-width: 576px) {
-    /* Estilos para telas menores que 576px de largura */
-    nav ul li {
-        margin: 10px 0; /* Espaçamento menor entre os itens do menu */
-    }
-
-    footer .footer-links a {
-        margin: 0 5px; /* Espaçamento menor entre os links do rodapé */
-    }
-
-    .social-media a {
-        margin: 5px 0; /* Espaçamento menor entre os ícones de redes sociais */
-    }
-}
