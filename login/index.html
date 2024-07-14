@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
+    <title>Página de login</title>
+</head>
+<body>
+
+    
+    <div class ="container">
+        <div class="image-section">
+            <img src="./img/walcem-11-07-2024 (1) 2.png" alt="logo" class="logo">
+            <!-- <img src="./img/cadastro.png" alt="Imagem de fundo" class="background-image"> -->
+        </div>
+
+        <div class="cadastro">
+        
+
+     <form id="cadastro-form" action="/submit_form" method="post">
+        
+        <div id="cadastrar-dados">
+        <h1 id="cadas">Cadastrar</h1>
+        <h4 id="inform">Informe os dados para realizar o cadastro da conta</h4>
+    </div>
+        <br>
+
+        <div id="">
+        <label id="name-label"> 
+            <p>Nome</p>
+            <input id="name" class="form-control" placeholder="Insira seu nome" type="text" required> 
+            <!-- pode-se colocar required para ser obrigatorio uma resposta -->
+        </input>
+        </label>
+        <!-- <br> -->
+        <label id="lastname-label">
+            <p>Sobrenome</p>
+            <input id="lastname" class="form-control" placeholder="Insira seu sobrenome" type="text" required> 
+        </input>
+        </label>
+
+        <label id="email-label"> 
+            <p>E-mail</p>
+            <input id="email-" class="form-control" placeholder="Insira seu email" type="email" required>
+        </input>
+        </label>
+
+        <label id="senha-label">
+            <p>Senha</p>
+            <input id="password" class="form-control" placeholder="Insira uma senha" type="password" required >
+        </input>
+        </label>
+
+        <label id="confirm-label">
+            <p>Cofirmar Senha</p>
+            <input id="confirm-password" class="form-control" placeholder="Repita a senha anterior para confirmar a senha" type="password" required>
+        </input>
+        </label>
+
+        <div class="cadastrar">
+            <button type="submit" id="submit" class="submit-button">Cadastrar</button>
+        </div>
+    </div>
+
+     </form>
+    </div>
+
+    
+    
+
+</body>
+</html>

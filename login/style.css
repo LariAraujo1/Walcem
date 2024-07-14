@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    font-size:large;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.image-section, .cadastro {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.image-section {
+    /*diminuir a imagem*/
+    background-color: aliceblue;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./img/cadastro_cortado.png')no-repeat left center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    height: 100vh; /*ajustar */
+}
+
+.logo {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    left: 10px;
+    top:100px;
+    /* width: 100px; */
+}
+
+.background-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.cadastro {
+    background-color: #fff;
+    padding: 20px;
+    color:rgba(0, 0, 0, 0.918);
+    font-weight:bold ;
+    
+}
+
+/* #inform{
+    
+} */
+
+form {
+    max-width: 300px;
+    width: 500px;
+    margin:20px auto;
+    
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilizando o espaço reservado */
+    input::placeholder {
+    color: #837e7e; /* Cor do espaço reservado */
+    background-color:#11101044(128, 128, 128, 0.068);
+    padding:8px;
+    border-color: black; 
+}
+#inform{
+    color:black;
+    font-weight: lighter;
+    position:absolute;
+    width: 500px;
+    left: 870px;
+    top:100px;
+}
+
+#cadas{
+    position:absolute;
+    width: 500px;
+    left: 710px;
+    top:50px;
+}
+#informacoes{
+    position:absolute;
+    width: 500px;
+    left: 10px;
+    top:50px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
