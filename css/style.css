@@ -96,7 +96,7 @@ header.shadow {
 /* Main Styles */
 
 main {
-  padding: 20px;
+  padding-inline: 20px;
 }
 
 #bemvindo .welcome {
@@ -302,65 +302,49 @@ main {
 /* Sobre */
 
 #sobre {
-  margin: 400px 0 400px;
-  position: relative;
-  text-align: center;
-  padding: 20px;
+  margin: 200px 0 200px;
+  max-width: 1920px;
 }
 
-.about {
-  position: relative;
+.sobre-about {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.about h2 {
-  font-size: 2rem;
-  margin-bottom: 60px;
+.sobre-about h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 
-.sobre-text-icons {
+.sobre-text-and-icons {
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  width: calc(
-    100% + 40px
-  ); /* Ajusta a largura para compensar o padding do main */
-  margin-left: -20px; /* Compensa o padding do main */
-  gap: 20px;
+  justify-content: space-between;
+  gap: 300px;
 }
 
-.sobre-text-icons p {
-  max-width: 400px;
-  margin: 0 20px;
+.sobre-icon {
+  flex: 0 0 auto;
+}
+
+.sobre-text-content {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.sobre-text-content p {
+  color: #77b0aa;
   text-align: center;
-}
-
-.sobre-text-icons .icon.left {
-  position: absolute;
-  left: -20px; /* Coloca a imagem à esquerda além do padding do main */
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.sobre-text-icons .icon.right {
-  position: absolute;
-  right: -40px; /* Coloca a imagem à direita além do padding do main */
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.sobre-text-icons .icon img {
-  display: block;
-  max-width: 100%; /* Ajuste conforme necessário */
+  font-size: 1.5em;
+  line-height: 1.6;
 }
 
 /* FAQ */
 
 #faq {
-  margin: 400px 0; /* Margin top e bottom de 400px */
+  margin: 10px 0; /* Margin top e bottom de 400px */
   text-align: center;
 }
 
@@ -439,69 +423,76 @@ main {
 /* Footer */
 
 footer {
-  margin-top: 300px;
-  position: relative;
-  background-color: #4b7d60; /* Cor de fundo do footer */
-  padding: 20px;
-  color: white;
+  margin-top: 100px;
+  text-align: center;
 }
 
 .footer-content {
-  height: 5px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 60px; /* Espaço para a parte que flutua */
-  position: relative;
-  top: -50px; /* Ajusta conforme necessário para mover para cima */
+  gap: 600px;
 }
 
 .persons img {
-  max-width: 100%;
+  position: relative;
+  max-width: 802px;
   height: auto;
-  position: relative;
-  top: -400px; /* Ajusta conforme necessário para mover para cima */
+  top: 100px;
 }
 
-.contact-form {
+.contact-form-container {
+  margin: 20px;
   background-color: white;
-  border: 1px solid black;
   padding: 20px;
+  border: 1px solid black;
   border-radius: 10px;
-  width: 300px;
   position: relative;
-  top: -400px; /* Faz com que o formulário flutue acima do footer */
-  z-index: 1;
+  z-index: 10;
+  max-width: 480px;
+  height: 630px;
+  margin-bottom: -100px; /* Faz o formulário invadir o footer-info */
 }
 
-.contact-form input,
+.contact-form-container h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.contact-form-container p {
+  margin: 5px 0 20px;
+  font-size: 1em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
 .contact-form textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 15px; /* Aumentado para 15px */
+  margin-bottom: 15px; /* Aumentado para 15px */
+  font-size: 1.2em; /* Aumentado para 1.2em */
   border: 1px solid #ccc;
   border-radius: 20px;
   background-color: #f0f0f0;
 }
 
 .contact-form button {
-  background-color: #64c62b;
-  color: white;
+  width: 100%;
+  padding: 15px; /* Aumentado para 15px */
+  background-color: #487d60;
   border: none;
-  padding: 10px;
-  border-radius: 20px;
+  color: white;
   cursor: pointer;
-}
-
-.contact-form button:hover {
-  background-color: #57b024;
+  border-radius: 20px;
+  font-size: 1.2em; /* Aumentado para 1.2em */
 }
 
 .footer-info {
-  background-color: #4b7d60; /* Cor de fundo das informações do footer */
+  background-color: #487d60;
   padding: 20px;
-  text-align: left; /* Alinha o texto à esquerda */
-  flex: 1;
+  color: white;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-info nav ul {
@@ -510,7 +501,8 @@ footer {
 }
 
 .footer-info nav ul li {
-  margin: 10px 0;
+  display: inline;
+  margin-right: 20px;
 }
 
 .footer-info nav ul li a {
@@ -518,10 +510,7 @@ footer {
   text-decoration: none;
 }
 
-.footer-info nav ul li a:hover {
-  text-decoration: underline;
-}
-
-.footer-info .contact-info {
-  margin-top: 20px;
+.footer-info .contact-info p,
+.footer-info p {
+  margin: 5px 0;
 }
