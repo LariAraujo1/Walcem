@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    display: flex;
 }
 .form-group {
     display: auto;
@@ -31,9 +30,8 @@ main {
     flex-direction: column;
     align-items: auto;
     max-width: auto;
-    padding: 20px;
+    padding: 10px;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="tel"] {
@@ -64,14 +62,74 @@ button:hover {
     margin-right: 30px;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
-.icons{
+.icons {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+.icon {
+    flex: 0 0 30%;
+    text-align: center;
+    margin: 5px;
+    background-color: #E49696;
+    border-radius: 55%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap-reverse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.teste{
+    display: auto;
+    margin-right: 20%;
+    padding: 2px;
+}
+.icon img {
+    max-width: 100%;
+    height: auto;
 }
 .text h2{
     display: flex;
     justify-content: auto;
+    font-size: 15px;
 }
-
+.footer {
+    background-color: #004d3b;
+    color: white;
+    font-size: 15px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .left, .footer .right {
+    display: flex;
+    flex-direction: column;
+}
+.footer .left div, .footer .right div {
+    margin-bottom: 1%;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.footer .contact-info {
+    display: flex;
+    align-items: center;
+}
+.footer .contact-info img {
+    margin-left: 5px;
+}
+.footer .bottom {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    text-align: center;
+}
