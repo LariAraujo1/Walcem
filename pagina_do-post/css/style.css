@@ -1,0 +1,272 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.contexto{
+    margin: 70px;
+}
+
+p{
+ margin: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.flex{
+    display: flex;
+    align-items: baseline;
+}
+
+
+.logo {
+    font-size: 38px;
+    font-family: 'Brush Script MT';
+    color: #7db65e;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+    margin-left: 1050%;
+}
+
+.search-profile {
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-wrapper input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    padding-left: 40px; /* Espaço para a imagem da lupa */
+    border: 1px solid #ccc;
+    border-radius:30px;
+    margin-right: 20px;
+}
+
+.search-wrapper .search-icon {
+    position: absolute;
+    left: 10px; /* Ajuste conforme necessário */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Ajuste o tamanho conforme necessário */
+    height: 20px; /* Ajuste o tamanho conforme necessário */
+}
+#teste{
+    width: 40px;
+}
+
+.author{
+    color: #6DE4EA;
+}
+
+.meta {
+    display: flex;
+    gap: 10px;
+    font-size: 0.9em;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.meta span {
+    border-right: 1px solid #e0e0e0;
+    padding-right: 10px;
+}
+
+.meta span:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.image-container {
+    
+}
+
+.image-container img {
+    max-width: 100%;
+    width: 900px;
+    height: 532px;
+    border-radius: 15px;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.posts {
+    display: flex;
+    gap: 20px;
+}
+
+.post {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+}
+
+.post p {
+    font-size: 1em;
+    padding: 10px;
+    color: #333;
+}
+
+
+.comments-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.comment-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 1em;
+    outline: none;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    outline: none;
+}
+
+.comment-form button:hover {
+    background-color: #218838;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.comment img {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.comment-text {
+    flex: 1;
+}
+
+.comment-text h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.comment-text p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #333;
+}
+
+.comment-text span {
+    font-size: 0.9em;
+    color: #777;
+}
+.footer-info {
+    background-color: #487d60;
+    padding: 40px;
+    color: white;
+    text-align: left;
+    z-index: 1;
+}
+
+
+.footer-info nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-info nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.footer-info nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-info .contact-info p,
+.footer-info p {
+    margin: 5px 0;
+}
