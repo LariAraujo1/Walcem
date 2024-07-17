@@ -1,122 +1,106 @@
-
-/* a logo e o cadastro não ficam fixados, principalmente com zoom */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
-}
-
-body {
-    display: flex;
-    height: 100vh;
-    font-size: large;
-    font-family: "Mulish", sans-serif;
-}
-
 .container {
     display: flex;
     width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    height: 500px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#cadastro-form {
-    background-color: #ebf1eb;
-    margin-left: 5px;
-    padding: 25px;
-    position: relative;
-    width: 600px;
-}
-
-.cadastro {
-    background-color: #e6eaeb9c;
-    padding: 20px;
-    color: rgba(0, 0, 0, 0.918);
-    font-weight: bold;
-}
-
-#inform {
-    color: black;
-    font-weight: lighter;
-    white-space: nowrap;
-    margin-top: 15px;
-    margin-bottom: 10px;   /*muda a posição de cadastrar*/
-}
-
-h1 {
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-#cadastrar-dados {
-    line-height: 15px;
-}
-
-.image-section, .cadastro {
-    flex: 1;
+.left, .right {
+    flex: 1; /* Ambos os lados ocupam metade da largura */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .image-section {
-    background-color: aliceblue;
-    background: url('./img/cadastro5.png') no-repeat left center;
-    background-size: cover;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* background-color: aliceblue; */
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
-    height: 100vh;
+    height: 100%;
 }
 
-.logo {
-    position: fixed;
-    width: 340px;
-    height: auto;
-    left: 135px;
-    top: 180px;
+.left {
+    background-image: url('./img/login.png'); 
 }
 
-form {
-    max-width: 500px;
+.right {
+    background-image: url('./img/reciclagem.png'); 
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #070707
+}
+
+.create-account-btn, .register-company-btn {
+    background-color: #66bb6a;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.create-account-btn:hover, .register-company-btn:hover {
+    background-color: #4caf50;
+}
+
+.form-group {
+    margin-bottom: 20px;
     width: 100%;
-    margin: 20px auto;
 }
 
-label {
+.form-group label {
     display: block;
     margin-bottom: 5px;
-    line-height: 28px; /* espaçamento entre linhas */
 }
 
-input {
+/* // barra de resposta */
+.form-group input { 
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #ccc;
-    border-radius: 20px;
+    border: 1px solid #070707;
+    border-radius: 5px;
+    color: #070707;
 }
 
-.button-container {
+.form-options {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-button {
-    width: 50%;
-    padding: 10px;
-    background-color: #4CAF50;
+.form-options a {
+    color: #2e7d32;
+    text-decoration: none;
+}
+
+.login-btn {
+    background-color: #66bb6a;
+    border: none;
     color: white;
-    border-radius: 20px;
+    padding: 15px 20px;
+    width: 100%;
     cursor: pointer;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-input::placeholder {
-    color: #837e7e;
-    background-color: #fffcfc44;
-    padding: 8px;
-    border-color: black;
-}
-
-button:hover {
-    background-color: #45a049;
+.login-btn:hover {
+    background-color: #4caf50;
 }
