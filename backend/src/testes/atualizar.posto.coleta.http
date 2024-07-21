@@ -1,0 +1,14 @@
+PUT http://localhost:5000/api/postos-coleta/{{id}}
+Content-Type: application/json
+
+{
+  "nomeEmpresa": "Nova Empresa Teste",
+  "endereco": "Novo Endereço, 456",
+  "tipoEletronicoAceito": ["Celular", "Tablet"],
+  "localizacao": {
+    "type": "Point",
+    "coordinates": [-23.5505, -46.6333]
+  },
+  "raioAtendimentoKm": 8,
+  "horarioFuncionamento": "Segunda a Sexta, 9h às 18h"
+}
