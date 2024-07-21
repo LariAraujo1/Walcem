@@ -1,0 +1,3 @@
+GET http://localhost:5000/api/postos-coleta
+Content-Type: application/json
+
