@@ -5,10 +5,10 @@ import * as supportController from '../controllers/suportController.js';
 const router = Router();
 
 // Define as rotas de suporte e mapeia para os controllers correspondentes
-router.get('/requests', supportController.getAllRequests);
-router.get('/requests/:id', supportController.getRequestById);
-router.post('/requests', supportController.createRequest);
-router.put('/requests/:id', supportController.updateRequest);
-router.delete('/requests/:id', supportController.deleteRequest);
+router.get('/suporte', supportController.getAllRequests);
+router.get('/suporte/:id', supportController.getRequestById);
+router.post('/suporte', supportController.createRequest);
+router.put('/suporte/:id', supportController.updateRequest);
+router.delete('/suporte/:id', supportController.deleteRequest);
 
 export default router;

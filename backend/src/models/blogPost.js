@@ -1,15 +1,17 @@
-import mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
 
-// Define o esquema do modelo de blog
-const blogSchema = new mongoose.Schema({
-    title: { type: String, required: true },
-    content: { type: String, required: true },
-    author: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date }
+const postSchema = new Schema({
+  title: String,
+  content: String,
+  imageUrl: String,
+  category: String,
+  comments: [{
+    user: String,
+    comment: String,
+    date: Date
+  }]
+}, {
+  timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }
 });
 
-// Cria o modelo de blog com base no esquema
-const Blog = mongoose.model('Blog', blogSchema);
-
-export default Blog;
+export default model('Post', postSchema);

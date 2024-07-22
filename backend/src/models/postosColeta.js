@@ -1,24 +1,26 @@
 import mongoose from 'mongoose';
 
-// Definição do schema para o modelo de dados de postos de coleta
+// Definição do schema
 const postosColetaSchema = new mongoose.Schema({
-  nomeEmpresa: { type: String, required: true },  // Nome da empresa do posto de coleta
-  endereco: { type: String, required: true },  // Endereço do posto de coleta
-  tipoEletronicoAceito: { type: [String], required: true },  // Tipos de eletrônicos aceitos pelo posto de coleta
-  localizacao: {  // Localização geoespacial do posto de coleta
-    type: { type: String, enum: ['Point'], default: 'Point' },  // Tipo Point para coordenadas geoespaciais
-    coordinates: { type: [Number], required: true }  // Coordenadas [longitude, latitude] do posto de coleta
-  },
-  raioAtendimentoKm: { type: Number, required: true },  // Raio de atendimento do posto de coleta em quilômetros
-  horarioFuncionamento: { type: String, required: true }  // Horário de funcionamento do posto de coleta
+  razaoSocial: { type: String, required: true },
+  cnpj: { type: String, required: true },
+  endereco: { type: String, required: true },
+  email: { type: String, required: true },
+  telefone: { type: String, required: true },
+  senha: { type: String, required: true },
+  tiposReciclaveis: { type: [String], required: true },
+  porte: { type: String, required: true }, // Pequeno, Médio, Grande
+  localizacao: {
+    type: { type: String, enum: ['Point'], required: true },
+    coordinates: { type: [Number], required: true }
+  }
 });
 
-// Adiciona um índice espacial 2dsphere no campo 'localizacao'
-// Isso permite consultas eficientes baseadas em geolocalização no MongoDB
+// Criação do índice espacial
 postosColetaSchema.index({ localizacao: '2dsphere' });
 
-// Cria o modelo 'postosColeta' usando o schema definido anteriormente
-// Este modelo facilita a manipulação de dados de postos de coleta de eletrônicos no MongoDB
-const postosColeta = mongoose.model('postosColeta', postosColetaSchema);
+// Criação do modelo
+const PostosColeta = mongoose.model('PostosColeta', postosColetaSchema);
 
-export default postosColeta;
+export default PostosColeta;
+

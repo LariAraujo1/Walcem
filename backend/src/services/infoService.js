@@ -1,24 +1,29 @@
-//  exemplo básico de como a camada de serviço pode ser estruturada.
+// services/infoService.js
+import Info from '../models/info.js';
 
-import Info from '../models/Info.js';
-
-export const getInfos = async () => {
-  return await Info.find();
+export const createInfoService = async (data) => {
+  const { category, title, content } = data;
+  const newInfo = new Info({ category, title, content });
+  return newInfo.save();
 };
 
-export const getInfo = async (id) => {
-  return await Info.findById(id);
+export const getAllInfoService = async () => {
+  return Info.find();
 };
 
-export const createNewInfo = async (data) => {
-  const newInfo = new Info(data);
-  return await newInfo.save();
+export const getInfoByIdService = async (id) => {
+  return Info.findById(id);
 };
 
-export const updateExistingInfo = async (id, data) => {
-  return await Info.findByIdAndUpdate(id, data, { new: true });
+export const updateInfoByIdService = async (id, data) => {
+  const { category, title, content } = data;
+  return Info.findByIdAndUpdate(
+    id,
+    { category, title, content },
+    { new: true }
+  );
 };
 
-export const deleteInfoById = async (id) => {
-  return await Info.findByIdAndDelete(id);
+export const deleteInfoByIdService = async (id) => {
+  return Info.findByIdAndDelete(id);
 };

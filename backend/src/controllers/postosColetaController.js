@@ -1,53 +1,94 @@
 import * as postosColetaService from '../services/postosColetaService.js';
+import { obterCoordenadas, obterRota } from '../services/geocodificacaoService.js'; 
 
 // Método para listar todos os postos de coleta
 export const listarPostosColeta = async (req, res) => {
   try {
-    // Chama o serviço para listar todos os postos de coleta
     const postos = await postosColetaService.listarTodosPostos();
-    res.json(postos); // Retorna os postos de coleta em formato JSON
+    res.json(postos);
   } catch (err) {
-    // Captura e retorna um erro caso ocorra algum problema
     res.status(500).json({ message: err.message });
+  }
+};
+
+// Método para buscar um posto de coleta por ID
+export const buscarPostoColetaPorId = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const posto = await postosColetaService.buscarPostoPorId(id);
+    if (!posto) {
+      return res.status(404).json({ message: 'Posto de coleta não encontrado' });
+    }
+    res.json(posto);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
   }
 };
 
 // Método para cadastrar um novo posto de coleta
 export const cadastrarPostoColeta = async (req, res) => {
-  const dadosPosto = req.body; // Obtém os dados do novo posto de coleta do corpo da requisição
+  const dadosPosto = req.body;
   try {
-    // Chama o serviço para cadastrar um novo posto de coleta com os dados recebidos
     const novoPosto = await postosColetaService.cadastrarNovoPosto(dadosPosto);
-    res.status(201).json(novoPosto); // Retorna o novo posto de coleta criado com status HTTP 201 (Created)
+    res.status(201).json(novoPosto);
   } catch (err) {
-    // Captura e retorna um erro caso ocorra algum problema na validação ou no cadastro
     res.status(400).json({ message: err.message });
   }
 };
 
 // Método para atualizar informações de um posto de coleta
 export const atualizarPostoColeta = async (req, res) => {
-  const { id } = req.params; // Obtém o ID do posto de coleta a ser atualizado dos parâmetros da requisição
-  const novosDados = req.body; // Obtém os novos dados do posto de coleta a serem atualizados do corpo da requisição
+  const { id } = req.params;
+  const novosDados = req.body;
   try {
-    // Chama o serviço para atualizar as informações do posto de coleta com o ID especificado
-    const postoAtualizado = await postosColetaService.atualizarPostoPorId(id, novosDados);
-    res.json(postoAtualizado); // Retorna o posto de coleta atualizado em formato JSON
+    const resultado = await postosColetaService.atualizarPostoPorId(id, novosDados);
+    res.json(resultado);
   } catch (err) {
-    // Captura e retorna um erro caso ocorra algum problema na validação ou na atualização
     res.status(400).json({ message: err.message });
   }
 };
 
 // Método para deletar um posto de coleta
 export const deletarPostoColeta = async (req, res) => {
-  const { id } = req.params; // Obtém o ID do posto de coleta a ser deletado dos parâmetros da requisição
+  const { id } = req.params;
   try {
-    // Chama o serviço para deletar o posto de coleta com o ID especificado
-    await postosColetaService.deletarPostoPorId(id);
-    res.json({ message: 'Posto de coleta deletado com sucesso' }); // Retorna uma mensagem de sucesso em caso de deleção bem-sucedida
+    const resultado = await postosColetaService.deletarPostoPorId(id);
+    res.json(resultado);
   } catch (err) {
-    // Captura e retorna um erro caso ocorra algum problema na validação ou na deleção
     res.status(400).json({ message: err.message });
+  }
+};
+
+// Método para buscar postos de coleta próximos
+export const buscarPostosProximos = async (req, res) => {
+  const { cep, distancia, porte, produto } = req.query;
+  try {
+    const postosProximos = await postosColetaService.buscarPostosProximos(cep, distancia, porte, produto);
+    res.json(postosProximos);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
+
+// Método para obter coordenadas usando a API de geocodificação do HERE
+export const obterCoordenadasController = async (req, res) => {
+  const { cep } = req.query;
+  try {
+    const coordenadas = await obterCoordenadas(cep);
+    res.json({ coordenadas });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+// Método para obter a rota entre dois pontos usando a API de roteamento do HERE
+export const obterRotaController = async (req, res) => {
+  const { origem, destino } = req.query;
+  try {
+    const rota = await obterRota(origem, destino);
+    res.json({ rota });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 };

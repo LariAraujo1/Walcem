@@ -4,15 +4,13 @@ import app from './app.js';
 
 // Carrega as variáveis de ambiente do arquivo .env para o processo do Node.js
 dotenv.config();
-console.log(process.env.MONGO_URI);
 
 // Definindo uma função assíncrona chamada connectDB para conectar ao MongoDB
 const connectDB = async () => {
   try {
     // Conectando ao MongoDB usando a URI definida na variável de ambiente MONGO_URI
     await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      // Remove useNewUrlParser e useUnifiedTopology, pois são configurados automaticamente
     });
     console.log('MongoDB conectado'); // Mensagem de sucesso ao conectar
   } catch (err) {

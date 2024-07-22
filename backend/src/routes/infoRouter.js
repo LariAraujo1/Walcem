@@ -1,18 +1,19 @@
+// routes/infoRoutes.js
 import express from 'express';
 import {
-  getAllInfos,
-  getInfoById,
   createInfo,
-  updateInfo,
-  deleteInfo
+  getAllInfo,
+  getInfoById,
+  updateInfoById,
+  deleteInfoById
 } from '../controllers/infoController.js';
 
 const router = express.Router();
 
-router.get('/', getAllInfos);
-router.get('/:id', getInfoById);
-router.post('/', createInfo);
-router.put('/:id', updateInfo);
-router.delete('/:id', deleteInfo);
+router.post('/info', createInfo);
+router.get('/info', getAllInfo);
+router.get('/info/:id', getInfoById);
+router.put('/info/:id', updateInfoById);
+router.delete('/info/:id', deleteInfoById);
 
 export default router;

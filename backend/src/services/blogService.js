@@ -1,36 +1,30 @@
-import Blog from '../models/blogPost.js';
+import Post from '../models/blogPost.js';
 
-// Serviço para listar todas as postagens do blog
 const getAllPosts = async () => {
-    return await Blog.find();
-};
-
-// Serviço para obter uma postagem do blog por ID
-const getPostById = async (id) => {
-    return await Blog.findById(id);
-};
-
-// Serviço para criar uma nova postagem no blog
-const createPost = async (postData) => {
-    const newPost = new Blog(postData);
-    return await newPost.save();
-};
-
-// Serviço para atualizar uma postagem no blog por ID
-const updatePost = async (id, postData) => {
-    return await Blog.findByIdAndUpdate(id, postData, { new: true });
-};
-
-// Serviço para excluir uma postagem do blog por ID
-const deletePost = async (id) => {
-    return await Blog.findByIdAndDelete(id);
-};
-
-// Exporta as funções do serviço
-export default {
+    return await Post.find();
+  };
+  
+  const getPostById = async (id) => {
+    return await Post.findById(id);
+  };
+  
+  const createPost = async (postData) => {
+    const post = new Post(postData);
+    return await post.save();
+  };
+  
+  const updatePost = async (id, postData) => {
+    return await Post.findByIdAndUpdate(id, postData, { new: true });
+  };
+  
+  const deletePost = async (id) => {
+    return await Post.findByIdAndDelete(id);
+  };
+  
+  export default {
     getAllPosts,
     getPostById,
     createPost,
     updatePost,
-    deletePost
-};
+    deletePost,
+  };

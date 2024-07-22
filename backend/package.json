@@ -4,7 +4,6 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
     "start": "nodemon server.js",
     "dev": "nodemon server.js"
   },
@@ -13,6 +12,7 @@
   "license": "ISC",
   "description": "Este será o servidor do projeto Walcem",
   "dependencies": {
+    "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "body-parse": "^0.1.0",
@@ -25,9 +25,6 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
-    "jest": "^29.7.0",
-    "mongodb-memory-server": "^10.0.0",
-    "nodemon": "^3.1.4",
-    "supertest": "^7.0.0"
+    "nodemon": "^3.1.4"
   }
 }
