@@ -24,7 +24,7 @@ export const cadastrarNovoPosto = async (dadosPosto) => {
     const novoPosto = new PostosColeta(dadosPosto);
     return await novoPosto.save();
   } catch (err) {
-    throw new Error(`Erro ao cadastrar novo posto de coleta: ${err.message}`);
+    throw new Error(`Erro ao cadastrar novo posto de coleta: 👀 ${err.message}`);
   }
 };
 
@@ -32,18 +32,18 @@ export const cadastrarNovoPosto = async (dadosPosto) => {
 export const atualizarPostoPorId = async (id, novosDados) => {
   try {
     if (!id.match(/^[0-9a-fA-F]{24}$/)) {
-      throw new Error('Formato de ID inválido');
+      throw new Error('Formato de ID inválido 🤦‍♀️');
     }
 
     const postoAtualizado = await PostosColeta.findByIdAndUpdate(id, novosDados, { new: true });
 
     if (!postoAtualizado) {
-      throw new Error('Posto de coleta não encontrado');
+      throw new Error('Posto de coleta não encontrado 😢');
     }
 
-    return { message: 'Posto de coleta atualizado com sucesso', data: postoAtualizado };
+    return { message: 'Posto de coleta atualizado com sucesso 🤞', data: postoAtualizado };
   } catch (err) {
-    throw new Error(`Erro ao atualizar posto de coleta: ${err.message}`);
+    throw new Error(`Erro ao atualizar posto de coleta: 👀 ${err.message}`);
   }
 };
 
