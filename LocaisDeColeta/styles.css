@@ -89,20 +89,24 @@ button[type="submit"] {
 .map {
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
 }
 
 .map img {
+    width: 500px;
+    height: 500px;
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     flex: 0 0 30%;
     justify-self: center;
-    position: fixed;
-    right: 100px;
-    bottom: 300px;
+    position: relative;
+    left: 800px;
+    bottom: 350px;
 }
 .footer {
     background-color: #004d3b;
