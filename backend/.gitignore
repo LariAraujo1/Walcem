@@ -1,4 +1,18 @@
-node_modules
+
 .vscode
 coverage
+
+
+
+# Dependências de Node.js
+node_modules/
+
+# Configuração de ambiente
 .env
+
+# Logs
+*.log
+
+# Diretórios de build
+dist/
+build/
