@@ -73,6 +73,7 @@ h2 {
 }
 p{
     font-size: 1.25rem;
+    transform: rotate(10);
 }
 .container {
     display: flex;
