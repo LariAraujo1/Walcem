@@ -2,17 +2,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-
+    display: block;
+ 
 }
-
+ 
 .contexto{
     margin: 70px;
 }
-
+ 
 p{
  margin: 5px;
+ 
 }
-
+ 
 header {
     display: flex;
     justify-content: space-between;
@@ -24,40 +26,48 @@ header {
     display: flex;
     align-items: baseline;
 }
-
-
+ 
+.ph{
+    width: 70%; /* Ajuste a largura conforme necessário */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    align-items: normal;
+}
+ 
 .logo {
     font-size: 38px;
     font-family: 'Brush Script MT';
     color: #7db65e;
 }
-
+ 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-
+ 
 nav ul li {
     display: inline;
 }
-
+ 
 nav ul li a {
     text-decoration: none;
     color: black;
     margin: 0 10px;
-    margin-left: 1050%;
 }
-
+ 
+ 
 .search-profile {
     display: flex;
     align-items: center;
 }
-
+ 
 .search-wrapper {
     position: relative;
 }
-
+ 
 .search-wrapper input[type="text"] {
     width: 200px;
     padding: 10px;
@@ -66,7 +76,7 @@ nav ul li a {
     border-radius:30px;
     margin-right: 20px;
 }
-
+ 
 .search-wrapper .search-icon {
     position: absolute;
     left: 10px; /* Ajuste conforme necessário */
@@ -78,11 +88,11 @@ nav ul li a {
 #teste{
     width: 40px;
 }
-
+ 
 .author{
     color: #6DE4EA;
 }
-
+ 
 .meta {
     display: flex;
     gap: 10px;
@@ -90,30 +100,84 @@ nav ul li a {
     color: #666666;
     margin-bottom: 15px;
 }
-
+ 
 .meta span {
     border-right: 1px solid #e0e0e0;
     padding-right: 10px;
 }
-
+ 
 .meta span:last-child {
     border-right: none;
     padding-right: 0;
 }
-
-.image-container {
-    
-}
-
+ 
+ 
 .image-container img {
     max-width: 100%;
     width: 900px;
     height: 532px;
     border-radius: 15px;
 }
-
-
+ 
+ 
 .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+ 
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+ 
+h2 a {
+    text-decoration: none;
+    color: #333;
+}
+ 
+.posts {
+    display: flex;
+    gap: 20px;
+}
+ 
+.post {
+    flex: 1;
+    background-color: #fff;
+ 
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.posts a {
+    text-decoration: none;
+    color: inherit; /* Mantém a cor do texto */
+}
+
+.posts a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse, se desejar */
+    color: #0000EE; /* Adicione a cor que você preferir ao passar o mouse */
+}
+
+ 
+.post img {
+    width: 100%;
+    height: auto;
+}
+ 
+.post p {
+    font-size: 1em;
+    padding: 10px;
+    color: #333;
+}
+ 
+ 
+.comments-container {
     width: 90%;
     max-width: 1200px;
     margin: 20px auto;
@@ -122,66 +186,19 @@ nav ul li a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
-
+ 
 h2 {
     font-size: 1.5em;
     margin-bottom: 20px;
     color: #333;
 }
-
-h2 a {
-    text-decoration: none;
-    color: #333;
-}
-
-.posts {
-    display: flex;
-    gap: 20px;
-}
-
-.post {
-    flex: 1;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-}
-
-.post img {
-    width: 100%;
-    height: auto;
-}
-
-.post p {
-    font-size: 1em;
-    padding: 10px;
-    color: #333;
-}
-
-
-.comments-container {
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
+ 
 .comment-form {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
-
+ 
 .comment-form input {
     flex: 1;
     padding: 10px;
@@ -190,7 +207,7 @@ h2 {
     font-size: 1em;
     outline: none;
 }
-
+ 
 .comment-form button {
     padding: 10px 20px;
     background-color: #28a745;
@@ -201,11 +218,11 @@ h2 {
     cursor: pointer;
     outline: none;
 }
-
+ 
 .comment-form button:hover {
     background-color: #218838;
 }
-
+ 
 .comment {
     display: flex;
     align-items: flex-start;
@@ -214,30 +231,30 @@ h2 {
     padding: 10px;
     border-radius: 8px;
 }
-
+ 
 .comment img {
     width: 50px;
     height: 50px;
     border-radius: 15px;
     margin-right: 10px;
 }
-
+ 
 .comment-text {
     flex: 1;
 }
-
+ 
 .comment-text h3 {
     margin: 0;
     font-size: 1.1em;
     color: #333;
 }
-
+ 
 .comment-text p {
     margin: 5px 0;
     font-size: 1em;
     color: #333;
 }
-
+ 
 .comment-text span {
     font-size: 0.9em;
     color: #777;
@@ -249,24 +266,167 @@ h2 {
     text-align: left;
     z-index: 1;
 }
-
-
+ 
+ 
 .footer-info nav ul {
     list-style-type: none;
     padding: 0;
 }
-
+ 
 .footer-info nav ul li {
     display: inline;
     margin-right: 20px;
 }
-
+ 
 .footer-info nav ul li a {
     color: white;
     text-decoration: none;
 }
-
+ 
 .footer-info .contact-info p,
 .footer-info p {
     margin: 5px 0;
+}
+ 
+#copy{
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 1920px) {
+    .container {
+        width: 80%;
+        margin: 40px auto;
+    }
+
+    header .logo {
+        font-size: 42px;
+    }
+
+    .ph {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container {
+        width: 85%;
+        margin: 30px auto;
+    }
+
+    header .logo {
+        font-size: 36px;
+    }
+
+    .ph {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    header input[type="text"] {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    header button {
+        margin-left: 5px;
+    }
+
+    main {
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    article h1 {
+        font-size: 24px;
+    }
+
+    article h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    header .logo {
+        font-size: 28px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header input[type="text"] {
+        margin-bottom: 10px;
+    }
+
+    header button {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    article h1 {
+        font-size: 20px;
+    }
+
+    article h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 440px) {
+    .container {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    header .logo {
+        font-size: 24px;
+    }
+
+    .ph {
+        font-size: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .post img {
+        width: 100%;
+        height: auto;
+    }
+
+    .comment-form {
+        flex-direction: column;
+    }
+
+    .comment-form input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .comment-form button {
+        width: 100%;
+    }
 }
