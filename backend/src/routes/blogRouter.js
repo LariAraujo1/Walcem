@@ -1,14 +1,19 @@
-import { Router } from 'express';
-import * as blogController from '../controllers/blogController.js';
+import express from 'express';
+import {
+    createPost,
+    updatePost,
+    deletePost,
+    getAllPosts,
+    getPostById
+} from '../controllers/blogController.js';
 
-// Cria um novo roteador
-const router = Router();
+const router = express.Router();
 
-// Define as rotas do blog e mapeia para os controllers correspondentes
-router.get('/posts', blogController.getAllPosts);
-router.get('/posts/:id', blogController.getPostById);
-router.post('/posts', blogController.createPost);
-router.put('/posts/:id', blogController.updatePost);
-router.delete('/posts/:id', blogController.deletePost);
+// Rotas para Administração de Notícias
+router.post('/posts', createPost); 
+router.put('/posts/:id', updatePost); 
+router.delete('/posts/:id', deletePost); 
+router.get('/posts', getAllPosts); 
+router.get('/posts/:id', getPostById); 
 
 export default router;
