@@ -1,66 +1,33 @@
-// Importando o serviço de autenticação
-const authService = require('../services/authService');
+import jwt from 'jsonwebtoken';
+import asyncHandler from 'express-async-handler';
+import User from '../models/user.js';
 
 // Registrar um novo usuário
-exports.register = async (req, res) => {
-  try {
-    const { name, email, password, userType } = req.body;
-    const result = await authService.register(name, email, password, userType);
-    res.status(201).json(result);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+export const registerUser = asyncHandler(async (req, res) => {
+  // Lógica de registro
+});
 
 // Login do usuário
-exports.login = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    const token = await authService.login(email, password);
-    res.status(200).json({ token });
-  } catch (error) {
-    res.status(401).json({ message: error.message });
-  }
-};
+export const authUser = asyncHandler(async (req, res) => {
+  // Lógica de autenticação
+});
 
 // Logout do usuário
-exports.logout = (req, res) => {
-  try {
-    authService.logout(req.token);
-    res.status(200).json({ message: 'Logout bem-sucedido' });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+export const logoutUser = asyncHandler(async (req, res) => {
+  // Lógica de logout
+});
 
 // Verificar token
-exports.verifyToken = (req, res) => {
-  try {
-    const isValid = authService.verifyToken(req.headers.authorization);
-    res.status(200).json({ valid: isValid });
-  } catch (error) {
-    res.status(401).json({ message: error.message });
-  }
-};
+export const verifyToken = asyncHandler(async (req, res) => {
+  // Lógica de verificação do token
+});
 
 // Recuperar senha
-exports.forgotPassword = async (req, res) => {
-  try {
-    const { email } = req.body;
-    await authService.forgotPassword(email);
-    res.status(200).json({ message: 'Instruções de recuperação de senha enviadas' });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+export const forgotPassword = asyncHandler(async (req, res) => {
+  // Lógica de recuperação de senha
+});
 
 // Resetar senha
-exports.resetPassword = async (req, res) => {
-  try {
-    const { token, newPassword } = req.body;
-    await authService.resetPassword(token, newPassword);
-    res.status(200).json({ message: 'Senha resetada com sucesso' });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+export const resetPassword = asyncHandler(async (req, res) => {
+  // Lógica de reset de senha
+});

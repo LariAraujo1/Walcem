@@ -1,16 +1,16 @@
 import express from 'express';
 import { registerUser, authUser, verifyToken } from '../controllers/authController.js';
-import { protect } from '../middleware/authMiddleware.js';
+import { protect } from '../middlewares/authMiddleware.js';
 
-const router = express.Router();
+const authRouter = express.Router();
 
 // Rota para registrar um novo usuário
-router.post('/register', registerUser);
+authRouter.post('/register', registerUser);
 
 // Rota para login de usuário
-router.post('/login', authUser);
+authRouter.post('/login', authUser);
 
 // Rota para verificar o token (protegida)
-router.get('/verify', protect, verifyToken);
+authRouter.get('/verify', protect, verifyToken);
 
-export default router;
+export default authRouter;

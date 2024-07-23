@@ -1,12 +1,20 @@
-import express from 'express';
-import { registerUser, loginUser } from '../controllers/userController.js';
+import jwt from 'jsonwebtoken';
+import asyncHandler from 'express-async-handler';
+import User from '../models/user.js';
 
-const router = express.Router();
+// Função para registrar um novo usuário
+const registerUser = asyncHandler(async (req, res) => {
+  // Lógica de registro
+});
 
-// Rota para registrar um novo usuário
-router.post('/register', registerUser);
+// Função para autenticar o usuário
+const authUser = asyncHandler(async (req, res) => {
+  // Lógica de autenticação
+});
 
-// Rota para login de usuário
-router.post('/login', loginUser);
+// Função para verificar o token
+const verifyToken = asyncHandler(async (req, res) => {
+  // Lógica de verificação do token
+});
 
-export default router;
+export { registerUser, authUser, verifyToken };
