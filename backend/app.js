@@ -9,6 +9,9 @@ import infoRouter from './src/routes/infoRouter.js'; // Novo roteador de informa
 import authRouter from './routes/authRouter.js';
 import userRouter from './routes/userRouter.js';
 import faqRouter from './routes/faqRouter.js';
+import passport from 'passport';
+import './config/passport.js';
+
 
 dotenv.config();
 
@@ -16,6 +19,8 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use(passport.initialize());
 
 app.use('/api/postos-coleta', postosColetaRoutes);
 app.use('/api/blog', blogRouter);
