@@ -1,19 +1,19 @@
 .container {
     display: flex;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 500px;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    height: 500px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
- 
+
 .left, .right {
     flex: 1; /* Ambos os lados ocupam metade da largura */
     display: flex;
     justify-content: center;
     align-items: center;
 }
- 
+
 .image-section {
     color: white;
     padding: 20px;
@@ -23,25 +23,26 @@
     align-items: center;
     position: relative;
     /* background-color: aliceblue; */
-    background-size: contain;
+    background-size: contain; 
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
     height: 100%;
 }
- 
+
 .left {
-    background-image: url('./img/login.png');
+    background-image: url('./img/login.png'); 
 }
- 
+
 .right {
-    background-image: url('./img/reciclagem.png');
+    background-image: url('./img/reciclagem.png'); 
 }
- 
+
 h1, h2 {
     margin-bottom: 20px;
+    color: #070707
 }
- 
+
 .create-account-btn, .register-company-btn {
     background-color: #66bb6a;
     border: none;
@@ -52,30 +53,30 @@ h1, h2 {
     border-radius: 5px;
     font-size: 16px;
 }
- 
+
 .create-account-btn:hover, .register-company-btn:hover {
     background-color: #4caf50;
 }
- 
+
 .form-group {
     margin-bottom: 20px;
     width: 100%;
 }
- 
+
 .form-group label {
     display: block;
     margin-bottom: 5px;
 }
- 
+
 /* // barra de resposta */
-.form-group input {
+.form-group input { 
     width: 100%;
     padding: 10px;
     border: 1px solid #070707;
     border-radius: 5px;
     color: #070707;
 }
- 
+
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -83,12 +84,12 @@ h1, h2 {
     width: 100%;
     margin-bottom: 20px;
 }
- 
+
 .form-options a {
     color: #2e7d32;
     text-decoration: none;
 }
- 
+
 .login-btn {
     background-color: #66bb6a;
     border: none;
@@ -99,7 +100,7 @@ h1, h2 {
     border-radius: 5px;
     font-size: 16px;
 }
- 
+
 .login-btn:hover {
     background-color: #4caf50;
 }
