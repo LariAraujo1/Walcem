@@ -3,19 +3,24 @@
   "version": "1.0.0",
   "description": "Projeto backend",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start":"nodemon C:/Users/larissa.tanascimento/Documents/Walcem/server.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
-    "axios": "^1.7.2",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.20.2",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.15",
-    "nodemon": "^3.1.4",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "axios": "1.7.2",
+    "bcryptjs": "2.4.3",
+    "body-parser": "1.20.2",
+    "dotenv": "16.4.5",
+    "express": "4.17.1",
+    "express-async-handler": "1.2.0",
+    "jsonwebtoken": "8.5.1",
+    "mongoose": "5.11.15",
+    "nodemailer": "6.9.14",
+    "nodemon": "3.1.4",
+    "passport": "0.4.1",
+    "passport-jwt": "4.0.1",
+    "passport-local": "1.0.0"
   },
   "author": "",
   "license": "ISC"
