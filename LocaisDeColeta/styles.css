@@ -6,6 +6,7 @@ body {
     color: #333;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -26,9 +27,9 @@ header h1 {
 main {
     display: flex;
     flex-direction: column;
-    align-items: auto;
     max-width: 1200px;
     padding: 10px;
+    justify-content: space-between;
 }
 h2 {
     font-size: 2rem;
@@ -94,19 +95,17 @@ button[type="submit"] {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
+    width: 100%;
+    max-width: 600px;
 }
-
 .map img {
-    width: 500px;
-    height: 500px;
+    flex: 0 0 30%;
+    position: relative;
+    
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    flex: 0 0 30%;
-    justify-self: center;
-    position: relative;
-    left: 800px;
-    bottom: 350px;
+    margin-bottom: 10px;
 }
 .footer {
     background-color: #004d3b;
@@ -177,4 +176,40 @@ button[type="submit"] {
  
 .footer-copyright:hover::before {
     color: #0056b3;
+}
+
+/* Resposividade * */
+/* Celulares */
+@media (max-width1: 576px) {
+    html, body {
+        overflow-y: hidden;
+    }
+    .form-group .option {
+        flex-direction: column;
+        width: 90%;
+        padding: 0 2rem;
+    }
+   .map .map img {
+    flex-direction: column;
+   }
+    .footer {
+        padding: 3rem 2rem;
+        width: 100%;
+        margin: 10px 0;   
+        text-align: center;    
+    }
+}
+
+/* Tablets */
+@media (max-width: 800px) {
+    .form-group .option {
+        padding: 10px;
+    }
+    .footer, .footer-container, .footer-content {
+        width: 100%;
+        margin: 10px 0;   
+        text-align: center;  
+        margin-bottom: none;
+        padding-bottom: none;
+    }
 }

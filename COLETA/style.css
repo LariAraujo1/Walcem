@@ -34,7 +34,6 @@ main {
     align-items: auto;
     max-width: auto;
     padding: 10px;
-    padding: 10px;
 }
 input[type="text"],
 input[type="email"],
@@ -213,5 +212,4 @@ img {
         margin-bottom: none;
         padding-bottom: none;
     }
-
 }
