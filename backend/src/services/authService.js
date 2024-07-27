@@ -1,49 +1,40 @@
-// authService.js
-//funcionalidades futuras como envio de e-mails, etc.
-
-import User from '../models/User.js';
+import User from '../models/userModel.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-const saltRounds = 10;
-
-// Registrar um novo usuário
 export const registerUser = async (userData) => {
-  const { name, email, password, userType } = userData;
+  const { name, email, password } = userData;
 
-  // Verificar se o usuário já existe
-  const existingUser = await User.findOne({ email });
-  if (existingUser) {
+  const userExists = await User.findOne({ email });
+  if (userExists) {
     throw new Error('User already exists');
   }
 
-  // Hash da senha
-  const hashedPassword = await bcrypt.hash(password, saltRounds);
-
-  // Criar novo usuário
-  const user = new User({ name, email, password: hashedPassword, userType });
-  await user.save();
-  return user;
+  const hashedPassword = await bcrypt.hash(password, 10);
+  
+  const newUser = new User({
+    name,
+    email,
+    password: hashedPassword
+  });
+  
+  return await newUser.save();
 };
 
-// Autenticar o usuário
-export const authenticateUser = async (email, password) => {
+export const loginUser = async (email, password) => {
   const user = await User.findOne({ email });
   if (!user) {
-    throw new Error('Invalid credentials');
+    throw new Error('Invalid email or password');
   }
 
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    throw new Error('Invalid credentials');
+    throw new Error('Invalid email or password');
   }
 
-  // Gerar token JWT
-  const token = jwt.sign({ id: user._id, userType: user.userType }, process.env.JWT_SECRET, { expiresIn: '1h' });
-  return { token, user };
-};
+  const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+    expiresIn: '1h'
+  });
 
-// Recuperar informações do usuário
-export const getUserById = async (userId) => {
-  return await User.findById(userId);
+  return { user, token };
 };
