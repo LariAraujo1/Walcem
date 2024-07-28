@@ -1,4 +1,4 @@
-/* CSS existente */
+</html> /* CSS existente */
 * {
     margin: 0;
     padding: 0;
@@ -15,52 +15,56 @@ body {
 .container {
     display: flex;
     width: 100%;
-}
-
-.image-section {
-    background-color: aliceblue;
-    background: url('./img/cadastro5.png') no-repeat center center;
-    background-size: cover;
-    overflow: hidden;
-    height: 100vh;
-    width: 50%;
-    max-width: 50%;
-    flex: 1;
-}
-
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
 }
 
+/* Seção da Imagem */
+.image-section {
+    background: url('./img/cadastro5.png') no-repeat center;
+    background-size: cover;
+    width: 50%; /* Ocupa 50% da largura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Container da Logo */
+.logo-container {
+    position: absolute;
+    top: 150px;
+    left: 280px;
+}
+
 .logo {
-    width: 100%;
-    height: auto;
+    width: fit-content;
+    height: 110px;
     max-width: 340px;
 }
 
+
+/* Seção de Cadastro */
 .cadastro {
-    background-color: #e6eaeb9c;
+    background-color: #ffffff;
     padding: 20px;
     color: rgba(0, 0, 0, 0.918);
     font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
+    width: 50%; /* Ocupa 50% da largura da tela */
+    max-width: 500px;
 }
 
-#registration-form {
-    background-color: #ebf1eb;
-    margin-left: 5px;
-    padding: 25px;
-    position: relative;
+/* Formulário de Registro */
+.registration-form {
+    background-color: #ffffff;
+    padding: 20px;
     width: 100%;
-    max-width: 100%;
+    box-sizing: border-box;
 }
 
+/* Estilo dos Elementos */
 #cadastrar-dados {
     line-height: 1.5;
 }
@@ -69,27 +73,36 @@ body {
     color: black;
     font-weight: lighter;
     white-space: nowrap;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 h1 {
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 15px;
+    text-align:justify;
+    margin-left: 1px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    line-height: 28px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #ccc;
-    border-radius: 20px;
+    border: 1px solid #817e7e;
+}
+
+input::placeholder {
+    color: #837e7e;
+    background-color: #fffcfc44;
+    border-color: rgb(46, 45, 45);
 }
 
 .button-container {
@@ -98,21 +111,11 @@ input {
 }
 
 button {
-    width: 50%;
-    padding: 10px;
     background-color: #4CAF50;
     color: white;
-    border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-input::placeholder {
-    color: #837e7e;
-    background-color: #fffcfc44;
-    padding: 8px;
-    border-color: black;
 }
 
 button:hover {
@@ -121,58 +124,65 @@ button:hover {
 
 /* Media Queries */
 @media (max-width: 1200px) {
-    .image-section {
-        width: 40%;
-        max-width: 40%;
+    .container {
+        flex-direction: column;
+        height: auto;
     }
-    .cadastro {
-        width: 60%;
-        max-width: 60%;
+
+    .image-section, .cadastro {
+        width: 100%;
+    }
+
+    .image-section {
+        height: 50vh;
+    }
+
+    .registration-form {
+        margin: 20px auto;
     }
 }
 
 @media (max-width: 768px) {
     .image-section {
-        width: 30%;
-        max-width: 30%;
+        height: 40vh;
     }
-    .cadastro {
-        width: 70%;
-        max-width: 70%;
-    }
+
     .logo {
         max-width: 60%;
     }
-    #registration-form {
-        padding: 15px;
+
+    .cadastro {
+        padding: 20px;
     }
-    input {
-        padding: 8px;
+
+    .registration-form {
+        width: 100%;
+        margin: 20px auto;
     }
-    button {
-        padding: 8px;
+
+    input, button {
+        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .image-section {
-        width: 20%;
-        max-width: 20%;
+        height: 30vh;
     }
-    .cadastro {
-        width: 80%;
-        max-width: 80%;
-    }
+
     .logo {
         max-width: 50%;
     }
-    #registration-form {
+
+    .cadastro {
         padding: 10px;
     }
-    input {
-        padding: 6px;
+
+    .registration-form {
+        margin: 10px auto;
     }
-    button {
-        padding: 6px;
+
+    input, button {
+        padding: 8px;
     }
 }

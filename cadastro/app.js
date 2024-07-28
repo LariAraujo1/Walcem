@@ -7,7 +7,7 @@ document.getElementById('registration-form').addEventListener('submit', function
         data[key] = value;
     });
 
-    fetch('http://localhost:3000/register', {
+    fetch('http://localhost:3000/register', { // verificar se o caminho esta correto
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
