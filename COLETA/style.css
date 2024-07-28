@@ -38,7 +38,7 @@ main {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-input[type="senha"] {
+input[type="password"] {
     width: 50%;
     padding: 10px;
     margin: 10px 0;
@@ -97,6 +97,9 @@ p{
     border-radius: 50%;
     margin: 10px 0;
     justify-content: center;
+}
+.icon.selected {
+    background-color: #9DFA95;
 }
 img {
     width: 60px;
