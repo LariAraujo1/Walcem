@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (nextInput) {
                     nextInput.focus();
                 } else {
-                    inputs[0].focus(); // Loop back to the first input if it's the last input
+                    inputs[0].focus(); 
                 }
             }
         });
